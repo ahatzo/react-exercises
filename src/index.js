@@ -4,6 +4,10 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { red, amber } from '@material-ui/core/colors'
 import App from './Components/App'
 
+if (module.hot) {
+  module.hot.accept()
+}
+
 const theme = createMuiTheme({
   palette: {
     primary: red,

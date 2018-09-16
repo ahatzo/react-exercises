@@ -1,9 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
+module.exports = (env, { mode }) => ({
   devtool: 'cheap-module-source-map',
   output: {
-    filename: '[name].[contenthash].js'
+    filename: `[name].${mode === 'production' ? '[contenthash]' : ''}.js`
   },
   module: {
     rules: [
@@ -20,4 +20,4 @@ module.exports = {
       template: 'index.html'
     })
   ]
-}
+})
